@@ -7,7 +7,6 @@ const toCurr = document.querySelector(".to select");
 const msg = document.querySelector(".msg");
 const i = document.querySelector("i");
 
-
 for (let select of dropDowns){
     for (currCode in countryList){
         let newOption = document.createElement("option");
@@ -53,11 +52,13 @@ btn.addEventListener("click", async (evt) => {
 
     let finalAmount = amtVal * rate;
     msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+
 });
 
 i.addEventListener("click", (evt) => {
+    evt.preventDefault();
     let temp = fromCurr.value;
-    fromCurr = toCurr.value;
+    fromCurr.value = toCurr.value;
     toCurr.value = temp;
 
     updateFlag(fromCurr);
