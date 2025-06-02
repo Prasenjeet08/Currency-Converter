@@ -5,6 +5,7 @@ const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
 const msg = document.querySelector(".msg");
+const i = document.querySelector("i");
 
 
 for (let select of dropDowns){
@@ -52,4 +53,13 @@ btn.addEventListener("click", async (evt) => {
 
     let finalAmount = amtVal * rate;
     msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+});
+
+i.addEventListener("click", (evt) => {
+    let temp = fromCurr.value;
+    fromCurr = toCurr.value;
+    toCurr.value = temp;
+
+    updateFlag(fromCurr);
+    updateFlag(toCurr);
 });
