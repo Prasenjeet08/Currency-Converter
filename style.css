@@ -101,6 +101,9 @@ form button {
 form button:hover {
     background: linear-gradient(to right, #355c7d, #6c5b7b);
 }
+i:hover{
+    cursor: pointer;
+}
 
 @media (max-width: 480px) {
     .dropdown {
